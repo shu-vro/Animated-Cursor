@@ -1,9 +1,7 @@
-var cursor = document.getElementById('cursor');
-var cursor2 = document.getElementById('cursor2');
-
-document.addEventListener('mousemove', function (e) {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-    cursor2.style.left = e.clientX + 'px';
-    cursor2.style.top = e.clientY + 'px';
-})
+var cursor = document.querySelectorAll('.cursor');
+cursor.forEach(point => {
+    document.addEventListener('mousemove', (e) => {
+        point.style.left = e.clientX + 'px';
+        point.style.top = e.clientY + 'px';
+    })
+});
